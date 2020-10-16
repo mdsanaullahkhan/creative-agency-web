@@ -23,11 +23,14 @@ const Review = () => {
                     swal('Thank You', 'Review Received!', 'success')
                 }
             })
+            .catch(error => {
+                swal('Error', 'Something went wrong', 'error');
+            })
     };
 
     return (
         <div>
-            <div className='row p-5'>
+            <div className='row p-md-5 pt-4'>
                 <div className='col-md-8'>
                     <form onSubmit={handleSubmit(onSubmit)}>
 

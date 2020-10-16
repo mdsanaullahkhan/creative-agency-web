@@ -23,7 +23,11 @@ const Footer = () => {
                 swal("Thank You!", "You message send successfully!", "success");
             }
         })
+        .catch(error => {
+            swal('Sorry', 'Something went wrong, try again later', 'error');
+        })
     };
+
     return (
         <div className='footer-container'>
             <div className='container'> 
@@ -51,7 +55,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='pt-5'>
-                    <p style={{praStyle}} className='text-center pb-3 mb-0 pt-5'>&#169; copyright - <span className='text-success'></span> || {new Date().getFullYear()}</p>
+                    <p style={{praStyle}} className='text-center pb-3 mb-0 pt-5'>&#169; copyright - <span className='text-success'>Creative</span> || {new Date().getFullYear()}</p>
                 </div>
             </div>
         </div>

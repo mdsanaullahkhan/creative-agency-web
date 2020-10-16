@@ -13,13 +13,15 @@ const AddService = () => {
         formData.append('taskName', data.taskName)
         formData.append('description', data.description)
 
-        fetch('https://rocky-shore-05546.herokuapp.com//addService', {
+        fetch('https://rocky-shore-05546.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })
             .then(res => res.json())
             .then(data => {
-                swal('Good Job', 'New service created successfully!', 'success')
+                if(data){
+                    swal('Good Job', 'New service created successfully!', 'success')
+                }
             })
             .catch(error => {
                 swal('Bad Request', 'Something went wrong', 'error');
@@ -32,7 +34,7 @@ const AddService = () => {
     }
 
     return (
-        <div className='row p-5'>
+        <div className='row p-md-5'>
 
             <form onSubmit={handleSubmit(onSubmit)} className='row d-flex'>
 
